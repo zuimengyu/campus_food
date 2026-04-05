@@ -16,28 +16,23 @@ app.use('/api/user', require('./routes/user'))
 app.use('/api/feedback', require('./routes/feedback'))
 
 // 3. 管理员工单
-app.use('/api/work-order', require('./routes/workOrder'))
+app.use('/api/workorder', require('./routes/workOrder'))
 
-// 4. 投稿模块
-app.use('/api/contribute', require('./routes/contribute'))
+// 4. 发布模块
+app.use('/api/publish', require('./routes/publish'))
 
-// 5. 活动模块
-app.use('/api/activity', require('./routes/activity'))
+// 5. 广场模块
+//app.use('/api/square', require('./routes/square'))
 
-// 6. 广场模块
-app.use('/api/square', require('./routes/square'))
+//6.主页模块
+//app.user('/api/index',require('./routes/index'))
 
 // 7. 互动模块
-app.use('/api/interact', require('./routes/interact'))
+//app.use('/api/interact', require('./routes/interact'))
 
-// 8. 文件上传
-app.use('/api/file', require('./routes/file'))
-
-// 9. 通用模块
-app.use('/api/common', require('./routes/common'))
 
 // 全局错误处理
-app.use(errorHandler)
+//app.use(errorHandler)
 
 // 启动服务
 const PORT = process.env.PORT || 3000
