@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const path = require('path')
 require('dotenv').config()
 
 const corsMiddleware = require('./middleware/cors')
@@ -8,6 +9,9 @@ const errorHandler = require('./middleware/errorHandler')
 app.use(corsMiddleware)
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+// 静态文件服务
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')))
 
 // 1. 用户模块
 app.use('/api/user', require('./routes/user'))
